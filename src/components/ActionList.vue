@@ -2,21 +2,26 @@
   <div class="bg-white border flex-col flex rounded-md shadow-lg">
     <h1 class="text-3xl font-bold p-4">List of actions committed</h1>
     <div class="p-6 bg-slate-100 grow">
-      <ul class="bg-white">
+      <transition-group class="bg-white rounded-md" name="fade" tag="ul">
         <li
           v-for="(action, index) in actions"
-          class="h-16 border-b flex items-center p-2"
+          :key="action.id"
+          class="h-16 border-b flex items-center p-2 justify-between"
         >
-          Moved post from index {{ action.from }} to index {{ action.to }}
+          <div>
+            {{
+              `Moved post ${action.postId} from index ${action.from} to index ${action.to}`
+            }}
+          </div>
           <button
             class="bg-green-300 rounded-md p-2 mx-2"
-            :aria-label="`Time travel to  `"
+            :aria-label="`Time travel back ${index + 1} changes`"
             @click="onTimeTravel(index)"
           >
             Time Travel
           </button>
         </li>
-      </ul>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -41,4 +46,14 @@ function onTimeTravel(index: number) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-3xl font-bold text-white">Sortable List</h1>
-    <TransitionGroup name="list" tag="ul">
+    <transition-group name="list" tag="ul">
       <li v-for="(post, index) in posts" :key="post.id">
         <div
           class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg"
@@ -23,7 +23,7 @@
           </div>
         </div>
       </li>
-    </TransitionGroup>
+    </transition-group>
   </div>
 </template>
 
@@ -31,6 +31,7 @@
 import type { PropType } from "vue";
 import IconDown from "./IconDown.vue";
 import IconUp from "./IconUp.vue";
+import { v4 as uuidv4 } from "uuid";
 import type { PostType, ActionType } from "./types";
 
 const { posts } = defineProps({
@@ -46,6 +47,7 @@ const emit = defineEmits<{
 
 function onUpAction(postId: number, from: number) {
   emit("action", {
+    id: uuidv4(),
     postId,
     from,
     to: from - 1,
@@ -54,6 +56,7 @@ function onUpAction(postId: number, from: number) {
 
 function onDownAction(postId: number, from: number) {
   emit("action", {
+    id: uuidv4(),
     postId,
     from,
     to: from + 1,
@@ -62,7 +65,7 @@ function onDownAction(postId: number, from: number) {
 </script>
 
 <style scoped>
-.list-move, /* apply transition to moving elements */
+.list-move,
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s ease;
@@ -74,8 +77,6 @@ function onDownAction(postId: number, from: number) {
   transform: translateX(30px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
 }

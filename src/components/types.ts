@@ -3,6 +3,7 @@ export type PostType = {
 };
 
 export type ActionType = {
+  id: string;
   postId: number;
   from: number;
   to: number;
