@@ -22,13 +22,15 @@ describe("PostList", () => {
     });
     await wrapper.find('[data-testid="icon-down"]').trigger("click");
 
-    const emittedAction = wrapper.emitted("action")?.[0]?.[0];
-    expect(emittedAction).toMatchObject({
-      from: 0,
-      postId: 1,
-      to: 1,
-    });
-    expect(emittedAction.id).toBeTypeOf("string");
+    const emittedAction: any = wrapper.emitted("action")?.[0];
+    expect(emittedAction).toMatchObject([
+      {
+        from: 0,
+        postId: 1,
+        to: 1,
+      },
+    ]);
+    expect(emittedAction?.[0].id).toBeTypeOf("string");
   });
 
   it("click up emits event", async () => {
@@ -39,12 +41,14 @@ describe("PostList", () => {
     });
     await wrapper.find('[data-testid="icon-up"]').trigger("click");
 
-    const emittedAction = wrapper.emitted("action")?.[0]?.[0];
-    expect(emittedAction).toMatchObject({
-      from: 1,
-      postId: 2,
-      to: 0,
-    });
-    expect(emittedAction.id).toBeTypeOf("string");
+    const emittedAction: any = wrapper.emitted("action")?.[0];
+    expect(emittedAction).toMatchObject([
+      {
+        from: 1,
+        postId: 2,
+        to: 0,
+      },
+    ]);
+    expect(emittedAction?.[0].id).toBeTypeOf("string");
   });
 });
