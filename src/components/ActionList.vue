@@ -7,6 +7,7 @@
           v-for="(action, index) in actions"
           :key="action.id"
           class="h-16 border-b flex items-center p-2 justify-between"
+          :data-testid="`action-${action.id}`"
         >
           <div>
             {{
@@ -14,6 +15,7 @@
             }}
           </div>
           <button
+            :data-testid="`time-travel-${index}`"
             class="bg-green-300 rounded-md p-2 mx-2"
             :aria-label="`Time travel back ${index + 1} changes`"
             @click="onTimeTravel(index)"

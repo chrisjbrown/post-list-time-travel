@@ -13,26 +13,12 @@
 <script setup lang="ts">
 import PostList from "./components/PostList.vue";
 import ActionList from "./components/ActionList.vue";
+import { usePosts } from "./composables/usePosts";
 
 import { ref } from "vue";
-import type { PostType, ActionType } from "./components/types";
-const posts = ref<PostType[]>([]);
+import type { ActionType } from "./components/types";
 const actions = ref<ActionType[]>([]);
-
-async function getPosts() {
-  // could add more error handling here
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const allPosts = (await response.json()) as unknown;
-
-  if (!Array.isArray(allPosts)) throw new Error("Array expected");
-
-  posts.value = allPosts.slice(0, 5).map((post) => {
-    return {
-      id: post.id,
-    };
-  });
-}
-getPosts();
+const posts = usePosts();
 
 /**
  * Move post and update actions

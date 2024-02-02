@@ -2,24 +2,34 @@
   <div>
     <h1 class="text-3xl font-bold text-white">Sortable List</h1>
     <transition-group name="list" tag="ul">
-      <li v-for="(post, index) in posts" :key="post.id">
+      <li
+        v-for="(post, index) in posts"
+        :key="post.id"
+        :data-testid="`post-${post.id}`"
+      >
         <div
           class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg"
         >
           <div>Post {{ post.id }}</div>
-          <div class="ml-3">
-            <IconUp
+          <div class="ml-3 flex flex-col">
+            <button
               v-if="index !== 0"
               @click="onUpAction(post.id, index)"
+              data-testid="icon-up"
               aria-label="move up"
-              class="hover:bg-slate-100 cursor-pointer"
-            />
-            <IconDown
+              class="hover:bg-slate-100"
+            >
+              <IconUp />
+            </button>
+            <button
               v-if="index !== posts.length - 1"
               @click="onDownAction(post.id, index)"
+              data-testid="icon-down"
               aria-label="move down"
-              class="hover:bg-slate-100 cursor-pointer"
-            />
+              class="hover:bg-slate-100"
+            >
+              <IconDown />
+            </button>
           </div>
         </div>
       </li>
@@ -74,10 +84,5 @@ function onDownAction(postId: number, from: number) {
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(30px);
-}
-
-.list-leave-active {
-  position: absolute;
 }
 </style>

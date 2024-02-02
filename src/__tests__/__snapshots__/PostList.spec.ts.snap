@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PostList > Renders with correct order 1`] = `
+"<div data-v-46953f88="">
+  <h1 data-v-46953f88="" class="text-3xl font-bold text-white">Sortable List</h1>
+  <transition-group-stub data-v-46953f88="" name="list" tag="ul" appear="false" persisted="false" css="true">
+    <li data-v-46953f88="" data-testid="post-1">
+      <div data-v-46953f88="" class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg">
+        <div data-v-46953f88="">Post 1</div>
+        <div data-v-46953f88="" class="ml-3 flex flex-col">
+          <!--v-if--><button data-v-46953f88="" data-testid="icon-down" aria-label="move down" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg></button>
+        </div>
+      </div>
+    </li>
+    <li data-v-46953f88="" data-testid="post-2">
+      <div data-v-46953f88="" class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg">
+        <div data-v-46953f88="">Post 2</div>
+        <div data-v-46953f88="" class="ml-3 flex flex-col"><button data-v-46953f88="" data-testid="icon-up" aria-label="move up" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
+            </svg></button><button data-v-46953f88="" data-testid="icon-down" aria-label="move down" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg></button></div>
+      </div>
+    </li>
+    <li data-v-46953f88="" data-testid="post-3">
+      <div data-v-46953f88="" class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg">
+        <div data-v-46953f88="">Post 3</div>
+        <div data-v-46953f88="" class="ml-3 flex flex-col"><button data-v-46953f88="" data-testid="icon-up" aria-label="move up" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
+            </svg></button><button data-v-46953f88="" data-testid="icon-down" aria-label="move down" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg></button></div>
+      </div>
+    </li>
+    <li data-v-46953f88="" data-testid="post-4">
+      <div data-v-46953f88="" class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg">
+        <div data-v-46953f88="">Post 4</div>
+        <div data-v-46953f88="" class="ml-3 flex flex-col"><button data-v-46953f88="" data-testid="icon-up" aria-label="move up" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
+            </svg></button><button data-v-46953f88="" data-testid="icon-down" aria-label="move down" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg></button></div>
+      </div>
+    </li>
+    <li data-v-46953f88="" data-testid="post-5">
+      <div data-v-46953f88="" class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg">
+        <div data-v-46953f88="">Post 5</div>
+        <div data-v-46953f88="" class="ml-3 flex flex-col"><button data-v-46953f88="" data-testid="icon-up" aria-label="move up" class="hover:bg-slate-100"><svg data-v-46953f88="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
+            </svg></button>
+          <!--v-if-->
+        </div>
+      </div>
+    </li>
+  </transition-group-stub>
+</div>"
+`;
