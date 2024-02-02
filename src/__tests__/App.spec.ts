@@ -8,7 +8,7 @@ const posts = [...Array(5).keys()].map((id) => ({ id: id + 1 }));
 function getPosts(wrapper: VueWrapper): string[] {
   return wrapper
     .findAll('[data-testid^="post-"]')
-    .map((post) => post.attributes("data-testid"));
+    .map((post) => post.attributes("data-testid") || "");
 }
 function getActions(wrapper: VueWrapper): DOMWrapper<HTMLElement>[] {
   return wrapper.findAll('[data-testid^="action-"]');
