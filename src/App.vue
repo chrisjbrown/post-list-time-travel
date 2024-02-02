@@ -5,12 +5,12 @@
   <div v-if="error" class="text-red-500">
     {{ error }}
   </div>
-  <div
+  <main
     class="mx-auto grid max-w-[1200px] gap-12 p-8 grid-cols-[1fr] md:grid-cols-[1fr_1fr]"
   >
     <PostList :posts="posts" @action="onMove" />
     <ActionList :actions="actions" @travel="timeTravel" />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

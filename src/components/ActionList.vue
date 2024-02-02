@@ -2,11 +2,11 @@
   <div class="bg-white border flex-col flex rounded-md shadow-lg">
     <h1 class="text-3xl font-bold p-4">List of actions committed</h1>
     <div class="p-6 bg-slate-100 grow">
-      <transition-group class="bg-white rounded-md" name="fade" tag="ul">
+      <transition-group class="rounded-md" name="slide" tag="ul">
         <li
           v-for="(action, index) in actions"
           :key="action.id"
-          class="h-16 border-b flex items-center p-2 justify-between"
+          class="bg-white h-16 flex items-center p-2 justify-between w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b"
           :data-testid="`action-${action.id}`"
         >
           <div>
@@ -49,13 +49,40 @@ function onTimeTravel(index: number) {
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
+.slide-enter {
+  opacity: 0;
+}
+
+.slide-move {
+  transition: all 0.5s;
+}
+
+.slide-enter-active {
+  animation: slide-in 0.5s ease-out forwards;
   transition: opacity 0.5s;
 }
 
-.fade-enter,
-.fade-leave-to {
+.slide-leave-active {
+  animation: slide-out 0.5s ease-out forwards;
+  transition: opacity 0.5s;
   opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-32px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateY(-32px);
+  }
 }
 </style>

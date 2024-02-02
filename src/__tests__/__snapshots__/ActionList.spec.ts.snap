@@ -4,11 +4,11 @@ exports[`ActionList > Renders with 2 actions 1`] = `
 "<div data-v-a1dcdb9c="" class="bg-white border flex-col flex rounded-md shadow-lg">
   <h1 data-v-a1dcdb9c="" class="text-3xl font-bold p-4">List of actions committed</h1>
   <div data-v-a1dcdb9c="" class="p-6 bg-slate-100 grow">
-    <transition-group-stub data-v-a1dcdb9c="" name="fade" tag="ul" appear="false" persisted="false" css="true" class="bg-white rounded-md">
-      <li data-v-a1dcdb9c="" class="h-16 border-b flex items-center p-2 justify-between" data-testid="action-abc">
+    <transition-group-stub data-v-a1dcdb9c="" name="slide" tag="ul" appear="false" persisted="false" css="true" class="rounded-md">
+      <li data-v-a1dcdb9c="" class="bg-white h-16 flex items-center p-2 justify-between w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b" data-testid="action-abc">
         <div data-v-a1dcdb9c="">Moved post 1 from index 0 to index 1</div><button data-v-a1dcdb9c="" data-testid="time-travel-0" class="bg-green-300 rounded-md p-2 mx-2" aria-label="Time travel back 1 changes"> Time Travel </button>
       </li>
-      <li data-v-a1dcdb9c="" class="h-16 border-b flex items-center p-2 justify-between" data-testid="action-def">
+      <li data-v-a1dcdb9c="" class="bg-white h-16 flex items-center p-2 justify-between w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b" data-testid="action-def">
         <div data-v-a1dcdb9c="">Moved post 3 from index 2 to index 1</div><button data-v-a1dcdb9c="" data-testid="time-travel-1" class="bg-green-300 rounded-md p-2 mx-2" aria-label="Time travel back 2 changes"> Time Travel </button>
       </li>
     </transition-group-stub>
@@ -20,7 +20,7 @@ exports[`ActionList > Renders with empty action list 1`] = `
 "<div data-v-a1dcdb9c="" class="bg-white border flex-col flex rounded-md shadow-lg">
   <h1 data-v-a1dcdb9c="" class="text-3xl font-bold p-4">List of actions committed</h1>
   <div data-v-a1dcdb9c="" class="p-6 bg-slate-100 grow">
-    <transition-group-stub data-v-a1dcdb9c="" name="fade" tag="ul" appear="false" persisted="false" css="true" class="bg-white rounded-md"></transition-group-stub>
+    <transition-group-stub data-v-a1dcdb9c="" name="slide" tag="ul" appear="false" persisted="false" css="true" class="rounded-md"></transition-group-stub>
   </div>
 </div>"
 `;

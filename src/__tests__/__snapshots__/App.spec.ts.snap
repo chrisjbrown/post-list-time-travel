@@ -3,7 +3,7 @@
 exports[`App > Consumes usePosts and renders 1`] = `
 "<div class="absolute -z-10 border-b-[10vw] border-l-[100vw] border-b-transparent border-l-indigo-900"></div>
 <!--v-if-->
-<div class="mx-auto grid max-w-[1200px] gap-12 p-8 grid-cols-[1fr] md:grid-cols-[1fr_1fr]">
+<main class="mx-auto grid max-w-[1200px] gap-12 p-8 grid-cols-[1fr] md:grid-cols-[1fr_1fr]">
   <div data-v-46953f88="">
     <h1 data-v-46953f88="" class="text-3xl font-bold text-white">Sortable List</h1>
     <transition-group-stub data-v-46953f88="" name="list" tag="ul" appear="false" persisted="false" css="true">
@@ -62,8 +62,8 @@ exports[`App > Consumes usePosts and renders 1`] = `
   <div data-v-a1dcdb9c="" class="bg-white border flex-col flex rounded-md shadow-lg">
     <h1 data-v-a1dcdb9c="" class="text-3xl font-bold p-4">List of actions committed</h1>
     <div data-v-a1dcdb9c="" class="p-6 bg-slate-100 grow">
-      <transition-group-stub data-v-a1dcdb9c="" name="fade" tag="ul" appear="false" persisted="false" css="true" class="bg-white rounded-md"></transition-group-stub>
+      <transition-group-stub data-v-a1dcdb9c="" name="slide" tag="ul" appear="false" persisted="false" css="true" class="rounded-md"></transition-group-stub>
     </div>
   </div>
-</div>"
+</main>"
 `;
