@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { mount, VueWrapper, DOMWrapper } from "@vue/test-utils";
 
-import App from "../App.vue";
+import App from "@/App.vue";
 
 const posts = [...Array(5).keys()].map((id) => ({ id: id + 1 }));
 

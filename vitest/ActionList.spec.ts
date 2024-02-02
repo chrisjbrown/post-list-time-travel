@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
-import ActionList from "../components/ActionList.vue";
+import ActionList from "@/components/ActionList.vue";
 
 const actions = [
   {

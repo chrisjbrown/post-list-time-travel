@@ -1,48 +1,45 @@
 <template>
-  <div>
-    <h1 class="text-3xl font-bold text-white">Sortable List</h1>
-    <transition-group name="list" tag="ul">
-      <li
-        v-for="(post, index) in posts"
-        :key="post.id"
-        :data-testid="`post-${post.id}`"
+  <transition-group name="list" tag="ul">
+    <li
+      v-for="(post, index) in posts"
+      :key="post.id"
+      :data-testid="`post-${post.id}`"
+    >
+      <div
+        class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg"
       >
-        <div
-          class="flex h-16 p-4 bg-white rounded-md my-4 items-center shadow-lg"
-        >
-          <div>Post {{ post.id }}</div>
-          <div class="ml-3 flex flex-col">
-            <button
-              v-if="index !== 0"
-              @click="onUpAction(post.id, index)"
-              data-testid="icon-up"
-              aria-label="move up"
-              class="hover:bg-slate-100"
-            >
-              <IconUp />
-            </button>
-            <button
-              v-if="index !== posts.length - 1"
-              @click="onDownAction(post.id, index)"
-              data-testid="icon-down"
-              aria-label="move down"
-              class="hover:bg-slate-100"
-            >
-              <IconDown />
-            </button>
-          </div>
+        <div>Post {{ post.id }}</div>
+        <div class="ml-3 flex flex-col">
+          <button
+            v-if="index !== 0"
+            @click="onUpAction(post.id, index)"
+            data-testid="icon-up"
+            aria-label="move up"
+            class="hover:bg-slate-100"
+          >
+            <IconUp />
+          </button>
+          <button
+            v-if="index !== posts.length - 1"
+            @click="onDownAction(post.id, index)"
+            data-testid="icon-down"
+            aria-label="move down"
+            class="hover:bg-slate-100"
+          >
+            <IconDown />
+          </button>
         </div>
-      </li>
-    </transition-group>
-  </div>
+      </div>
+    </li>
+  </transition-group>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import IconDown from "./IconDown.vue";
-import IconUp from "./IconUp.vue";
+import IconDown from "@/components/IconDown.vue";
+import IconUp from "@/components/IconUp.vue";
 import { v4 as uuidv4 } from "uuid";
-import type { PostType, ActionType } from "./types";
+import type { PostType, ActionType } from "@/components/types";
 
 const { posts } = defineProps({
   posts: {

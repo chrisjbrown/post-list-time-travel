@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
-import type { ActionType } from "./types";
+import type { ActionType } from "@/components/types";
 
 const { actions } = defineProps({
   actions: {

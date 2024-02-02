@@ -8,20 +8,29 @@
   <main
     class="mx-auto grid max-w-[1200px] gap-12 p-8 grid-cols-[1fr] md:grid-cols-[1fr_1fr]"
   >
-    <PostList :posts="posts" @action="onMove" />
+    <div>
+      <h1 class="text-3xl font-bold text-white">Sortable List</h1>
+      <template v-if="pending">
+        <PostListSkeleton :count="5" />
+      </template>
+      <template v-else>
+        <PostList :posts="posts" @action="onMove" />
+      </template>
+    </div>
     <ActionList :actions="actions" @travel="timeTravel" />
   </main>
 </template>
 
 <script setup lang="ts">
-import PostList from "./components/PostList.vue";
-import ActionList from "./components/ActionList.vue";
-import { usePosts } from "./composables/usePosts";
+import PostList from "@/components/PostList.vue";
+import PostListSkeleton from "@/components/PostListSkeleton.vue";
+import ActionList from "@/components/ActionList.vue";
+import { usePosts } from "@/composables/usePosts";
 
 import { ref } from "vue";
-import type { ActionType } from "./components/types";
+import type { ActionType } from "@/components/types";
 const actions = ref<ActionType[]>([]);
-const [posts, error] = usePosts();
+const [posts, pending, error] = usePosts();
 
 /**
  * Move post and update actions

@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
-import PostList from "../components/PostList.vue";
+import PostList from "@/components/PostList.vue";
 
 const posts = [...Array(5).keys()].map((id) => ({ id: id + 1 }));
 
