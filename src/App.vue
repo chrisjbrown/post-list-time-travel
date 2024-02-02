@@ -2,6 +2,9 @@
   <div
     class="absolute -z-10 border-b-[10vw] border-l-[100vw] border-b-transparent border-l-indigo-900"
   ></div>
+  <div v-if="error" class="text-red-500">
+    {{ error }}
+  </div>
   <div
     class="mx-auto grid max-w-[1200px] gap-12 p-8 grid-cols-[1fr] md:grid-cols-[1fr_1fr]"
   >
@@ -18,7 +21,7 @@ import { usePosts } from "./composables/usePosts";
 import { ref } from "vue";
 import type { ActionType } from "./components/types";
 const actions = ref<ActionType[]>([]);
-const posts = usePosts();
+const [posts, error] = usePosts();
 
 /**
  * Move post and update actions
